@@ -32,13 +32,19 @@ public class UserDaoImpl extends AbstractDao<Integer, Identity> implements
 		criteria.add(Restrictions.eq("displayName", name));
 		return (Identity) criteria.uniqueResult();
 	}
-
+/*
+ * (non-Javadoc)
+ * @see fr.tbr.iam.dao.UserDao#findIdentityByID(int)
+ */
 	public Identity findIdentityByID(int id) {
 		Criteria criteria = createEntityCriteria();
 		criteria.add(Restrictions.eq("id", id));
 		return (Identity) criteria.uniqueResult();
 	}
-
+/*
+ * (non-Javadoc)
+ * @see fr.tbr.iam.dao.UserDao#deleteIdentity(java.lang.String)
+ */
 	public void deleteIdentity(String displayName) {
 		Query query = getSession().createSQLQuery(
 				"delete from IDENTITIEES where IDENTITY_DISPLAY_NAME = :displayName");
