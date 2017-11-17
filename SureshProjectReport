@@ -1,0 +1,216 @@
+Identity Management Application Report
+By
+Suresh Kumar YEDLA
+M.Sc. Software Engineering 2017 
+Professor: Thomas Broussard
+Date: 17 November 2017
+The Web based Application
+Subject: Advance JAVA
+
+
+
+ 
+
+
+
+
+
+Table of Contents
+Subject Description	3
+Overview	3
+Subject Analysis	3
+Main Features	3
+Application Feasibility	4
+Data Structure	5
+Expected Results	5
+Scope and Limitations	6
+CONCEPT	6
+1.	Chosen Algorithm	6
+2.	Data Structures	6
+Application Flow Diagram	7
+Configuration instructions	8
+Maven:	8
+Server:	8
+Create Database:	9
+Create Table:	9
+Toolset:	9
+Screenshots	10
+
+
+
+
+
+
+
+
+
+
+Subject Description 
+
+Overview
+
+Identity management is the task of controlling information about users on computers. Such information includes information that authenticates the identity of a user, and actions on the user. It also includes the management of descriptive information about the user and how and by whom that information can be accessed and modified Core Java concepts
+
+Maven is a "build management tool", this maven tool has Maven Dependencies that comes with Maven it has all kinds of useful jar files that can be used in project, and this tool is very useful for developing this application. Which allows us to know how .java files get compiled to .class, packaged into .jar (or .war or. ear) files, (pre/post) processed with tools, managing CLASSPATH, and all others sorts of tasks that are required to build project.
+For this project Spring Framework has been used, it used to import the spring d dependencies, so it depends on what you need to do. By using spring-JDBC we can facilitate its database facilities. What spring does is to bind all the java libraries to easy use in the application. Spring also provides a bunch of implementations of web stuff like REST, an MVC web framework and more.
+
+Hibernate is a powerful framework it is an object-relational mapping (ORM) library for the Java language; it always follows given when Then Methodology, it has a framework for mapping an object-oriented domain model to a traditional relational database. Hibernate solves object-relational impedance mismatch problems by replacing direct persistence-related database by accessing the persistent entity with high-level object handling functions.
+
+Subject Analysis 
+Main Features 
+Authentication: The application user can gain access to the application when the correct credentials are given. User can be shown user defined exceptions when any wrong User name or password is given in the UI. User can register himself if the access is not given.
+Create Identity: User can create identity by providing name, date of birth, password, e-mail and these attributes will be added in the table IDENTITIEES .
+Search an Identity: User can search for an entity by giving display name to fetch the related record in the database.
+Search can be done in two forms 
+1.	By giving the display name for that particular identity.
+2.	User also has option by to look at all the users in Database by leaving the text field blank and searching. This will display all the users that are there in Table.
+Update an Identity: User can update an entity by selecting the Edit Identity column in the search results. User can modify all the details, except for the password. Here the password is not shown to other users.
+Note: validations in the other details and Password hidden
+
+Delete an Identity: User can delete an entity by selecting the searched entity. User can delete any identity by button clicking on the Delete clickable label.
+
+Application Feasibility
+
+This application is has a good looking design which are developed using CSS and bootstrap which makes my IAM_System application look and feel application. This application has some validations where user has some restrictions like password cannot be same when compared to other users; password should be 6-20 character.
+
+
+
+Data Structure 
+
+
+1.	IAM_SYSTEM: (CORE and WEB)
+a.	Configuration:
+i.	This module is used to configure the application which is required for the first Initialization.
+ii.	This also is used for the Configuration of Hibernate 
+
+b.	Users:
+i.	This module is used to handle user related activities like user registration.
+
+c.	Data Model :
+i.	This module is used for dealing with persistent entity of all the user functions like save update or delete.
+ii.	This module is also used for fields of Login page which interacts with Database.
+iii.	This module is used to handle all identity related operations.
+
+d.	Services:
+i.	This module will be used for service like finding the  user details by the identity user name.
+ii.	And updating the user details with User found details in the  user Dao.
+
+e.	Servlets:
+i.	Servlets are used to handle all control all DAO and User related activities it’s acting like a controller.
+f.	JSP:
+i.	JSP is java servlet page which is other form web forms. Which act as a view for the user to view.  Here the form is used to build custom tags and perform java operations.
+Expected Results                               						   		
+The User can experience great view of the UI, look and feel is affordable to see. The user can be able to create a new user account when the user is not having any login credentials. And User can be able to authenticate easy.
+User can be able to create user account, once the login is successful , user is also be able to apply CRUD operations like Create Update Delete along with search option. The application is User friendly, 
+User can be asked to login after creating a new identity even after login is successful to see the changes. The communication is fast.
+Scope and Limitations 
+ The project is mainly focused on the server side aspect of the website, even though the project uses bootstrap and css to achieve a quick and nice front end UI
+Dependency  Injection.
+
+CONCEPT
+1.	Chosen Algorithm
+The login is looked by using session. Here the login application first displayed page for the user is Login.jsp whenever a request from the user is initiated the validations are performed, the user will be allowed to access the welcome page only after it is successful. 
+When the user submits to create, a request for the servlet is made and gives a page registration.jsp page is displayed for the user
+Same process is followed for the Search and update and deletes operations.
+If the user has requested for the update option.. in this app the user is not allowed to change his ID or Password. If no changes are made the update will be made without any affects.
+2.	Data Structures
+This is a process of dealing with data objects which are used to store the identity details. Data structure which is used based on presentation, business and data access layer. This is a good technique. We can modify our application without affecting its layers.
+Application Flow Diagram
+ 
+
+
+
+
+
+
+
+Configuration instructions
+Maven:
+1.	Open Eclipse and go to: Help / Eclipse Marketplace.
+2.	Insert on search: "Maven" and look for "Maven Integration for Eclipse WTP" and install it.
+3.	If the installation was successfully made in Window/Preferences, the Maven option will be visible.
+4.	Download the last version from here:
+a.	http://maven.apache.org/download.html and put it on a folder in C partition (or other partitions) - just remember that the path to the downloaded maven shouldn't contain spaces (you will have errors) - for example, path is: "c:\Apache_Maven\apache-maven-3.0.4...".
+5.	After downloading it, go in Eclipse -> Window -> Preferences -> Maven (from left menu and expand it) -> Installations -> and add path to the downloaded maven.
+6.	To create the project: New -> Other -> Maven -> Maven Project -> and search on filter the archetype you would like to use (for example: use maven-archetype-webapp for web application etc.). Click Next and put project details: Group Id, Artifact Id, Version etc.
+7.	After creating the project, the most important file is pom.xml. There add dependencies. Another important thing, maven local repository will be created here: "c:\Users\YOUR_USERNAME\m2."
+8.	To perform maven, install/build/clean etc, right click on project and click "Run as" -> Select option.
+Server:
+Add Server
+1.	Windows -> Show View -> Servers. 
+2.	Then in the server’s view, right click and add new. 
+3.	It will show a pop up containing many server vendors. 
+4.	Under Apache select Tomcat v9.0.1 (Depending upon your downloaded server version). 
+5.	And in the run time configuration point it to the Tomcat folder downloaded.
+Create Database:
+1.	Open derby client folder, open Bin folder, open ij.bat  file 
+2.	Create iam_database
+3.	Connect to iam_database
+ 
+Create Table:
+ 
+
+Toolset:
+1.	 Server: Apache Version 9.0
+2.	Derby Client: db-derby-10.13.1.1-bin
+3.	CSS
+4.	Bootstrap
+5.	Spring framework 
+ To access page
+http://localhost:8080/IAM_System/
+Screenshots 
+1: Login page: login.jsp
+ 
+This Index page has the UI like above where we can give Username And Password Details. This page also has Validations and which can give out some exceptions when wrong Credentials are entered
+For Example: 	User Name: EPITA	Password: 123456
+
+2: Welcome Page:  welcome.jsp
+  
+
+3: Identity Creation Page : registration.jsp
+ 
+The Fields in this UI has also have validations. And user defined exceptions will be displayed whenever the missing fields are submitted or wrong format is given.
+
+
+4: Success Message for Identity Creation – success.jsp
+
+
+ 
+Note: When New Identity is created , we need to login again with valid credintials to see the details in the table. When search is done.
+
+
+
+5: Identity Search Page – searchResult.jsp & allemployees.jsp
+5.1: Search Option without Name
+ 
+Result Below: 
+All the available Users in the web application System are displayed in table format
+Click on the Edit Identity on the name which you wanted to update or deleted.
+ 
+5.2: Search Option with a Name Field
+Ex: EPITA  < This Identity which I have created in my DB Earlier. So I am using it to search. Below is result
+ 
+6: Identity Update
+1.	I would like to update EPITA Identity, where I want to update its Email to epita@epita.fr.com. When clicked on the EPITA identity the below Page is shown where we can do some modifications.
+ 
+2.	Update Userdefined message and the list link to display the table which is updated
+ 
+
+
+3.	 Identity Update Success Page : Email Updated
+ 
+
+
+9: Identity Delete Page: EPITA Identity is deleted 
+
+References:
+1.	http://thomas-broussard.fr/work/java/courses/project/advanced.xhtml#documentation
+2.	http://www.mkyong.com/tutorials/maven-tutorials/
+3.	http://www.mkyong.com/spring-boot/spring-boot-slf4j-logging-example/?utm_source=mkyong&utm_medium=sidebar&utm_campaign=10k-100k&utm_content=3
+4.	https://www.w3schools.com/css/css_margin.asp
+5.	https://www.w3schools.com/css/css_icons.asp
+6.	Thao, Dhanaraju Ryali, Rabin Kumar.
+7.	https://www.tutorialspoint.com/
+8.	https://stackoverflow.com/questions/tagged/spring+maven
+9.	https://tomcat.apache.org/download-90.cgi
+
